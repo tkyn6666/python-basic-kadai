@@ -1,0 +1,24 @@
+class Human:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def check_adult(self):
+        return self.age >= 20
+
+# Humanクラスのインスタンスを複数生成してリストに追加
+people = [
+    Human("takuya", 41),
+    Human("sayaka", 36),
+    Human("honoka", 2)
+]
+
+# リストの要素数分だけcheck_adultメソッドを呼び出し
+for person in people:
+    is_adult = person.check_adult()
+
+    # 結果の表示
+    if is_adult:
+        print(person.name, "は成人です。")
+    else:
+        print(person.name, "は未成年です。")
