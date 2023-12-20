@@ -1,0 +1,21 @@
+import numpy as np
+
+# 行列Aの定義
+matrix_A = np.array([[0, 1],
+                    [2, 3,],
+                    [4, 5,]])
+
+# 行列Bの定義
+matrix_B = np.array([[0,1,2,3,],
+                    [4,5,6,7]])
+
+# 行列の積を計算
+result_matrix = np.dot(matrix_A, matrix_B)
+
+# 計算された行列の表示
+print("計算された行列:")
+print(result_matrix)
+
+# 計算された行列の要素の最大値を求めて表示
+max_value = np.max(result_matrix)
+print("計算された行列の要素の最大値:", max_value)
