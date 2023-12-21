@@ -1,0 +1,35 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Corrected subplot creation
+fig, axes = plt.subplots(2, 3)
+
+# Plotting on the first set of subplots
+y0 = [1, 2, -5, 2]
+axes[0,0].plot(y0)
+axes[0, 0].plot(y0, color='red') 
+axes[0,0].set_title('oresenngurahu')
+
+
+# Data creation
+x = np.linspace(0, 10, 100)
+y = 2 + 2 * np.sin(2 * x)
+
+# Plotting on the second set of subplots
+axes[0, 1].plot(x, y, linewidth=2.0)
+ 
+# Setting limits and ticks
+axes[0, 1].set(xlim=(0, 10), xticks=np.arange(0, 10),
+               ylim=(-1, 5), yticks=np.arange(-1, 6))
+
+axes[0, 2].hist(x_scatter, bins=20, color='skyblue', edgecolor='black')
+axes[0, 2].set_title('ヒストグラム')
+
+
+axes[1, 0].scatter(x_scatter, y_scatter, c='green', marker='o')
+axes[1, 0].set_title('Scatter Plot')
+
+plt.show()
+
+
+
