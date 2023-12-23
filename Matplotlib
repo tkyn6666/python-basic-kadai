@@ -1,35 +1,35 @@
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
 
-# Corrected subplot creation
-fig, axes = plt.subplots(2, 3)
+# Create data for different plots
+x_line = np.linspace(0, 10, 100)
+y_line = 2 + 2 * np.sin(2 * x_line)
 
-# Plotting on the first set of subplots
+x_scatter = np.random.normal(5, 2, 100)
+y_scatter = x_scatter + np.random.normal(0, 1, 100)
+
+# Create subplots
+fig, axes = plt.subplots(2, 3, figsize=(10, 8))
+
+# Line plot
 y0 = [1, 2, -5, 2]
 axes[0,0].plot(y0)
-axes[0, 0].plot(y0, color='red') 
-axes[0,0].set_title('oresenngurahu')
+axes[0, 0].set_title('oresenn')
 
+# Sine function
+axes[0, 1].plot(x_line, y_line, 'r-')
+axes[0, 1].set_title('Sine Function')
 
-# Data creation
-x = np.linspace(0, 10, 100)
-y = 2 + 2 * np.sin(2 * x)
+# Histogram
+axes[0, 2].hist(x_scatter, bins=20, color='purple', edgecolor='black')
+axes[0, 2].set_title('Histogram')
 
-# Plotting on the second set of subplots
-axes[0, 1].plot(x, y, linewidth=2.0)
- 
-# Setting limits and ticks
-axes[0, 1].set(xlim=(0, 10), xticks=np.arange(0, 10),
-               ylim=(-1, 5), yticks=np.arange(-1, 6))
-
-axes[0, 2].hist(x_scatter, bins=20, color='skyblue', edgecolor='black')
-axes[0, 2].set_title('ヒストグラム')
-
-
+# Scatter plot
 axes[1, 0].scatter(x_scatter, y_scatter, c='green', marker='o')
 axes[1, 0].set_title('Scatter Plot')
 
+# Adjust layout
+plt.tight_layout()
+
+# Show the combined plot
 plt.show()
-
-
-
